@@ -2,7 +2,7 @@ import logging
 
 import initialization  # noqa: F401 keep this first, to ensure we're set up for other imports
 from android_utils import share_by_intent
-from android_utils import start_service
+from kolibri_tasks import start_default_tasks
 from jnius import autoclass
 from kolibri.main import enable_plugin
 from kolibri.plugins.app.utils import interface
@@ -42,6 +42,8 @@ enable_plugin("kolibri.plugins.app")
 # we need to initialize Kolibri to allow us to access the app key
 initialize()
 
+start_default_tasks()
+
 interface.register(share_file=share_by_intent)
 
 # start kolibri server
@@ -65,5 +67,4 @@ kolibri_server.subscribe()
 alt_port_server.subscribe()
 app_plugin = AppPlugin(kolibri_server)
 app_plugin.subscribe()
-start_service("workers")
 kolibri_server.run()
