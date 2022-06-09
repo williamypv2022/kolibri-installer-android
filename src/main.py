@@ -2,7 +2,6 @@ import logging
 
 import initialization  # noqa: F401 keep this first, to ensure we're set up for other imports
 from android_utils import share_by_intent
-from kolibri_tasks import start_default_tasks
 from jnius import autoclass
 from kolibri.main import enable_plugin
 from kolibri.plugins.app.utils import interface
@@ -11,6 +10,7 @@ from kolibri.utils.server import BaseKolibriProcessBus
 from kolibri.utils.server import KolibriServerPlugin
 from kolibri.utils.server import ZeroConfPlugin
 from kolibri.utils.server import ZipContentServerPlugin
+from kolibri_tasks import start_default_tasks
 from magicbus.plugins import SimplePlugin
 from runnable import Runnable
 
