@@ -37,6 +37,7 @@ os.environ["KOLIBRI_APK_VERSION_NAME"] = get_version_name()
 os.environ["DJANGO_SETTINGS_MODULE"] = "kolibri_app_settings"
 
 os.environ["KOLIBRI_CHERRYPY_THREAD_POOL"] = "2"
+os.environ["KOLIBRI_SCHEDULE_HOOKS"] = "kolibri_tasks.queue_task"
 
 Secure = autoclass("android.provider.Settings$Secure")
 
